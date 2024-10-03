@@ -1,0 +1,116 @@
+@font-face {/* Declaring a font face called documentFont */
+    font-family: documentFont;
+    src: url(Oswald-VariableFont_wght.ttf);
+  }
+
+  html * /* Declaring the font for the whole website as documentFont */
+{
+    font-family: documentFont;
+}
+#gridContainer { /* The div used in the body will be separated like this */
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+
+#homeGridContainer { /* Div used for home page displayed differently, so aside is displayed on the left of the page. */
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "main aside"
+        "footer footer";
+}
+
+aside{ /* This is declaring the grid area as aside and then centering the text inside. */
+    grid-area:aside;
+    text-align: center;
+}
+
+main{ /* Declaring grid area for main */
+    grid-area: main;
+    margin-top: 10px;
+
+}
+
+header {    /* Grid area declared, min height is set to 50px. The background colour is set, so the text is on a background. Width set to fit the page. */
+    grid-area: header;
+    min-height: 50px;
+    background-color: #32868a;
+    width: 100%;
+    color:white;
+    text-align: center;
+}
+nav{ /* Padding so the nav isnt right next to the header banner. */
+    padding:10px;
+    grid-area: nav;
+}
+nav ul { /* This is used so the navigation links are displayed across the page */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li { /* So nav links displayed across */
+    display: inline;
+}
+nav li a { /* gets rid of any underlines and keeps the nav links as black when clikced. */
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    font-weight: lighter;
+  }
+nav a:hover{ /* When hovered over, link goes bolder. */
+    font-weight:bolder;
+}
+
+#loginForm{ /* The login form fields are stacked vertically. */
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto; 
+}
+#eventForm{ /* Event form fields stacked vertically */
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto; 
+}
+label { /* Padding the label for the forms fields. */
+    margin-bottom: 10px;
+    display: block; 
+}
+
+footer { /* So the footr is at the bottom of the page, and takes up 100% of the page width. */
+    grid-area:footer;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    z-index: 1000;
+}
+
+
+.error-heading { /* Centres text with id error-heading */
+    text-align: center;
+}
+
+.error-message { /* Same as above */
+    text-align: center;
+}
+
+.loginLink{ /* Same as above */
+    text-align: center;
+}
+
